@@ -25,7 +25,7 @@ namespace FridgeOOP
 
         public string DispenserType
         {
-            get { return this.dispenserType; } //no set prevents you from changing the DispenserType
+            get { return this.dispenserType; } //no set prevents you from changing the DispenserType to be set in "Properties"
         }
 
         public int FoodAmount
@@ -41,10 +41,80 @@ namespace FridgeOOP
         }
 
         
-        //Constructors
+        //Constructors == allow us to build an object that can be used in another class
+        public Fridge()
+        {
+            this.dispenserType = "basic water dispenser"; // sets value for dispenserType (no set value listed above)
+        }
 
+        public Fridge(string dispenserType)
+        {
+            this.dispenserType = dispenserType;
+        }
+
+        public Fridge(bool isClean, string dispenserType, int foodAmount, bool bulbsWork)
+        {
+            this.isClean = isClean;
+            this.dispenserType = dispenserType;
+            this.foodAmount = foodAmount;
+            this.bulbsWork = bulbsWork;
+        }
 
         //Methods()
+        //I need a way to dispense water
+        public void DispenseWater() //kep typing, red squigglly linke will clear itself
+        {
+            if (dispenserType == "basic water dispenser")
+            {
+                Console.WriteLine("Here's some lukewarm water.");
+            }
+            else if (dispenserType == "deluxe dispenser") 
+            {
+                Console.WriteLine("Enjoy your perfect ice water.");
+            }
+            else 
+            {
+                Console.WriteLine("What's gonna come out? It's a surprise!");
+            }
+        }
 
+        //Do I need to change the bulb?
+        public string ChangeBulbs()
+        {
+            if (bulbsWork == false)
+            {
+                bulbsWork = true;
+                return "The bulbs have been changed.";
+            }
+            else
+            {
+                return "The bulbs don't have to be changed.")
+            }
+            
+        }
+
+        // Food Removal
+        public void RemoveFood(int foodRemoved) // takes parameters but does not return anything
+        {
+            foodAmount -= foodRemoved; // -= means decreasing amount
+        }
+
+
+        // Check amount of food
+        public string CheckSupplies()
+        {
+            if (foodAmount >= 80)
+            {
+                return "fully stocked";
+            }
+            else if (foodAmount > 40)
+            {
+                return "getting low";
+            }
+            else
+            {
+                return "time to grocery shop";
+            }
+        }
     }
-}}
+}
