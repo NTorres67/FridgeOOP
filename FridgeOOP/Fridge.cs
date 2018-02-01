@@ -119,9 +119,9 @@ namespace FridgeOOP
 
 
         //Does the fridge need to be cleaned?
-        public string Clean( bool isDirty) // user inputs "true" go to line 126, else go to line 129
+        public string Clean() // user inputs "true" go to line 126, else go to line 129
         {
-            if (isDirty)
+            if (isClean == false)
             {
                 isClean = true; 
                 return "I cleaned the fridge.";
@@ -132,5 +132,8 @@ namespace FridgeOOP
             }
 
         }
+
+        ////To stop program
+        //public string StopProgram
     }
 }
