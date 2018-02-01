@@ -88,7 +88,7 @@ namespace FridgeOOP
             }
             else
             {
-                return "The bulbs don't have to be changed.")
+                return "The bulbs don't have to be changed.";
             }
             
         }
@@ -115,6 +115,22 @@ namespace FridgeOOP
             {
                 return "time to grocery shop";
             }
+        }
+
+
+        //Does the fridge need to be cleaned?
+        public string Clean( bool isDirty) // user inputs "true" go to line 126, else go to line 129
+        {
+            if (isDirty)
+            {
+                isClean = true; 
+                return "I cleaned the fridge.";
+            } 
+            else
+            {
+                return "The fridge is already clean.";
+            }
+
         }
     }
 }
